@@ -6,7 +6,7 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 8080
   selector:
     app: ciudapp-frontend
 ---
@@ -28,5 +28,5 @@ spec:
       - name: ciudapp-frontend
         image: rlsanjose/ciudapp-frontend-cloud:1.0
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 
