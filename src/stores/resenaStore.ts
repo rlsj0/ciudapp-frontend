@@ -15,7 +15,7 @@ export const useResenasStore = defineStore('resenas', () => {
     fechaRegistro: new Date()
   })
   const isLoaded = ref(false)
-  const url = `http://aa3aaa00bba2b4855a81feb4c74c759e-1288683218.us-east-1.elb.amazonaws.com`
+  const url = `http://a2f11f0c4df194d67ab0483d5a08df6b-162624780.us-east-1.elb.amazonaws.com`
 
   async function fetchAll(id: number) {
 
