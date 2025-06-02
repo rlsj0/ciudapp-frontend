@@ -6,7 +6,7 @@ export const useCitiesStore = defineStore('cities', () => {
 
   const cities = reactive(new Array<City>())
   const isLoaded = ref(false)
-  const url = `aa3aaa00bba2b4855a81feb4c74c759e-1288683218.us-east-1.elb.amazonaws.com`
+  const url = `http://aa3aaa00bba2b4855a81feb4c74c759e-1288683218.us-east-1.elb.amazonaws.com`
 
 
   async function fetchAll() {
