@@ -6,14 +6,14 @@ export const useCitiesStore = defineStore('cities', () => {
 
   const cities = reactive(new Array<City>())
   const isLoaded = ref(false)
-  const url = `${window.location.protocol}//${window.location.hostname}`
+  const url = `aa3aaa00bba2b4855a81feb4c74c759e-1288683218.us-east-1.elb.amazonaws.com`
 
 
   async function fetchAll() {
 
     if (cities.length === 0) {
       try {
-        const response = await fetch(`${url}:8080/Ciudad`);
+        const response = await fetch(`${url}/Ciudad`);
         const data = await response.json();
 
 
@@ -41,7 +41,7 @@ export const useCitiesStore = defineStore('cities', () => {
   async function addCity(city: NewCity) {
 
     try {
-      const response = await fetch(`${url}:8080/Ciudad`, {
+      const response = await fetch(`${url}/Ciudad`, {
         method: "POST",
         headers: { "Content-type": "application/json;charset=UTF-8" },
         body: JSON.stringify(city)
@@ -68,7 +68,7 @@ export const useCitiesStore = defineStore('cities', () => {
 
   async function deleteCity(id: number) {
     try {
-      const response = await fetch(`${url}:8080/Ciudad/${id}`, {
+      const response = await fetch(`${url}/Ciudad/${id}`, {
         method: 'DELETE',
         headers: { "Content-type": "application/json;charset=UTF-8" },
       })

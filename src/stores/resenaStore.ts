@@ -15,12 +15,12 @@ export const useResenasStore = defineStore('resenas', () => {
     fechaRegistro: new Date()
   })
   const isLoaded = ref(false)
-  const url = `${window.location.protocol}//${window.location.hostname}`
+  const url = `aa3aaa00bba2b4855a81feb4c74c759e-1288683218.us-east-1.elb.amazonaws.com`
 
   async function fetchAll(id: number) {
 
     try {
-      const response = await fetch(`${url}:8080/Ciudad/` + id + '/Resena');
+      const response = await fetch(`${url}/Ciudad/` + id + '/Resena');
       const data = await response.json();
 
       const resenasInfo = data.map((c: any) => ({
@@ -46,7 +46,7 @@ export const useResenasStore = defineStore('resenas', () => {
   async function addResena(resena: NewResena) {
 
     try {
-      const response = await fetch(`${url}:8080/Resena`, {
+      const response = await fetch(`${url}/Resena`, {
         method: "POST",
         headers: { "Content-type": "application/json;charset=UTF-8" },
         body: JSON.stringify(resena)
@@ -73,7 +73,7 @@ export const useResenasStore = defineStore('resenas', () => {
 
   async function deleteResena(id: number) {
     try {
-      const response = await fetch(`${url}:8080/Resena/${id}`, {
+      const response = await fetch(`${url}/Resena/${id}`, {
         method: 'DELETE',
         headers: { "Content-type": "application/json;charset=UTF-8" },
       })
@@ -99,7 +99,7 @@ export const useResenasStore = defineStore('resenas', () => {
   async function fetchCity(id: number) {
 
     try {
-      const response = await fetch(`${url}:8080/Ciudad/` + id);
+      const response = await fetch(`${url}/Ciudad/` + id);
       const data = await response.json();
 
       console.log(data)
