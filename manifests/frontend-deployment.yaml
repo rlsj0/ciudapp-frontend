@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ciudapp-frontend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: ciudapp-frontend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ciudapp-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ciudapp-frontend
+  template:
+    metadata:
+      labels:
+        app: ciudapp-frontend
+    spec:
+      containers:
+      - name: ciudapp-frontend
+        image: rlsanjose/ciudapp-frontend-cloud:1.0
+        ports:
+        - containerPort: 80
+
