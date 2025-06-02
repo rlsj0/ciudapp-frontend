@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: ciudapp-frontend
-        image: rlsanjose/ciudapp-frontend-cloud:2.0
+        image: rlsanjose/ciudapp-frontend-cloud:2.1
         ports:
         - containerPort: 8080
 
