@@ -11,6 +11,7 @@ export const useCitiesStore = defineStore('cities', () => {
 
   async function fetchAll() {
 
+    console.log("URL de backend usada: ", url);
     if (cities.length === 0) {
       try {
         const response = await fetch(`${url}/Ciudad`);
